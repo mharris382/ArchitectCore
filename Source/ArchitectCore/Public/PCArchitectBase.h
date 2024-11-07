@@ -65,10 +65,11 @@ struct FArchitectMaterialOptions
     {}
 };
 
+
 UENUM(BlueprintType)
 enum EAssetSpawnMode : uint8
 {
-    MeshOnly,
+    MeshOnly UMETA(DisplayName = "Mesh"),
     AssemblyOnly,
     Combined,
     DoNotSpawn
