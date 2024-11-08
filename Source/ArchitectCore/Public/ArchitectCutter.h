@@ -7,8 +7,9 @@
 #include "ArchitectCutter.generated.h"
 
 UENUM(BlueprintType)
-enum class ECutterMode : uint8
+enum class EArchitectCutterMode : uint8
 {
+	
 	Modify UMETA(DisplayName = "Modify", Tooltip = "Modifies overlapping points and assigns them back to the building grid as Door or Window slots."),
 
 	Erase UMETA(DisplayName = "Erase", Tooltip = "Deletes overlapping points from the building grid, preventing any structure from spawning in those slots."),
@@ -18,7 +19,6 @@ enum class ECutterMode : uint8
 	///** Query Mode (Optional): Checks overlapping points without modifying or adding to them, useful for analysis or diagnostics. */
 	//Query UMETA(DisplayName = "Query", Tooltip = "Queries overlapping points for inspection or diagnostic purposes without modification or spawning additional elements.")
 };
-
 
 
 UCLASS()
