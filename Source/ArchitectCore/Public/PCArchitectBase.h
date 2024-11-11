@@ -69,7 +69,7 @@ struct FArchitectMaterialOptions
 UENUM(BlueprintType)
 enum EAssetSpawnMode : uint8
 {
-    MeshOnly UMETA(DisplayName = "Mesh"),
+    MeshOnly ,
     AssemblyOnly,
     Combined,
     DoNotSpawn
@@ -94,10 +94,10 @@ public:
     // Constructor to initialize default paths for plugin assets
     FArchitectOverrides()
     {
-        SSMGraph= LoadObject<UPCGGraphInterface>(nullptr, TEXT("/PCGArchitect/Subgraphs/Defaults/PCG_SSM_Default.PCG_SSM_Default"));
-        CAGraph = LoadObject<UPCGGraphInterface>(nullptr, TEXT("/PCGArchitect/Subgraphs/Defaults/PCG_CA_Default.PCG_CA_Default"));
-        FAGraph = LoadObject<UPCGGraphInterface>(nullptr, TEXT("/PCGArchitect/Subgraphs/Defaults/PCG_FA_Default.PCG_FA_Default"));
-        SAGraph = LoadObject<UPCGGraphInterface>(nullptr, TEXT("/PCGArchitect/Subgraphs/Defaults/PCG_SA_Default.PCG_SA_Default"));
+       // SSMGraph= LoadObject<UPCGGraphInterface>(nullptr, TEXT("/PCGArchitect/Subgraphs/Defaults/PCG_SSM_Default.PCG_SSM_Default"));
+       // CAGraph = LoadObject<UPCGGraphInterface>(nullptr, TEXT("/PCGArchitect/Subgraphs/Defaults/PCG_CA_Default.PCG_CA_Default"));
+       // FAGraph = LoadObject<UPCGGraphInterface>(nullptr, TEXT("/PCGArchitect/Subgraphs/Defaults/PCG_FA_Default.PCG_FA_Default"));
+       // SAGraph = LoadObject<UPCGGraphInterface>(nullptr, TEXT("/PCGArchitect/Subgraphs/Defaults/PCG_SA_Default.PCG_SA_Default"));
     }
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Overrides")
@@ -121,7 +121,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Overrides")
     TObjectPtr<UPCGGraphInterface> SAGraph;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite,  meta = (InlineEditConditionToggle))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides",  meta = (InlineEditConditionToggle))
     bool bEnableSAGraph = true;
 };
 
