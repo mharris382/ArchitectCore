@@ -100,29 +100,31 @@ public:
        // SAGraph = LoadObject<UPCGGraphInterface>(nullptr, TEXT("/PCGArchitect/Subgraphs/Defaults/PCG_SA_Default.PCG_SA_Default"));
     }
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Overrides")
-    TObjectPtr<UPCGGraphInterface> SSMGraph;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Overrides")
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides")
     bool bEnableSSMGraph = true;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Overrides")
-    TObjectPtr<UPCGGraphInterface> CAGraph;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides", meta = (EditCondition = "bEnableSSMGraph"))
+    TObjectPtr<UPCGGraphInterface> SSMGraph;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Overrides")
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides")
     bool bEnableCAGraph = true;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Overrides")
-    TObjectPtr<UPCGGraphInterface> FAGraph;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides", meta = (EditCondition = "bEnableCAGraph"))
+    TObjectPtr<UPCGGraphInterface> CAGraph;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Overrides")
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides")
     bool bEnableFAGraph = true;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Overrides")
-    TObjectPtr<UPCGGraphInterface> SAGraph;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides", meta = (EditCondition = "bEnableFAGraph"))
+    TObjectPtr<UPCGGraphInterface> FAGraph;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides",  meta = (InlineEditConditionToggle))
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides")
     bool bEnableSAGraph = true;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides", meta = (EditCondition = "bEnableSAGraph"))
+    TObjectPtr<UPCGGraphInterface> SAGraph;
 };
 
 UCLASS()
@@ -134,17 +136,9 @@ public:
 	// Sets default values for this actor's properties
 	APCArchitectBase();
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides")
-    FArchitectOverrides ArchitectOverrides;
+    /*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Overrides")
+    FArchitectOverrides ArchitectOverrides;*/
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "00 - Core", meta = (DisplayPriority=1))
 	//int Seed;
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 };
