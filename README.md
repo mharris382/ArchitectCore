@@ -2,31 +2,24 @@
 # ArchitectCore
 
 # Directory Structure
-ArchitectCore/
-├── Content/
-│   ├── Blueprints/                # Blueprint Building Spline and Building Cutter Actors
-│   │   ├── Components/            # (Experimental planned with 5.5) Modular building modifiers using components
-│   │   ├── Experimental/          # experiments
-│   ├── Bonus/                     # Just a triplanar material that I find useful
-│   ├── Core/                      # All the internal pcg systems that are core to the plugin
-│   │   ├── ArchitectAssets/       # data asset definition for recipe sets used by PCG, The primary data asset class.  A full recipe would define each possible building slot
-│   │   ├── ArchitectPipeline/     # data asset defintion to optionally override some or all parts of the spawning pipeline, can also use to 
-│   │   ├── Graphs/                # PCG Graphs (see graph naming conventions)
-│   │   │   ├── Defaults/          # Defualt Behaivors that can be overrides (see override graph section)
-│   │   │   │   ├── Overrides/     # Override Behaviors that added to the pcg building pipeline
-│   ├── Recipes/                   # Recipe Data
-│   │   ├── Recipes/               #  Recipe Examples
-│   │   ├── Pipeline/              #  Pipeline Examples
-│   ├── Templates/                 # Blueprint Building Spline and Building Cutter Actors
-│   │   ├── Assemblies/            # Packed Level Actors and PCG Data Assets
-│   │   ├── Meshes/                # Template Building Meshes (used as defaults)
-│   │   ├── Materials/             # Template Building materials (used as defaults)
-│   ├── Presets/                   # Preset assets for PCG recipes, settings
-│   └── UI/                        # User interface assets, like icons and widgets
-├── Resources/                     # Non-Unreal assets (e.g., documentation, UI icons)
-└── Source/                        # Plugin source code
-    └── ArchitectCore/             # Main module. mostly constains custom editor structs QoL improvments
 
+
+
+# Slot Masks
+| Slot Name | Bit Index | Number |  Exclusive Slots | 
+|-----------|-----------|--------|--------------------------|
+| Wall      | 1         | 1      | Floor, Ceiling           |
+| Door      | 2         | 2      | Window                   |
+| Window      | 3         | 4      | Door                   |
+| Corner Out    | 4         | 8      | Corner In            |
+| Corner In    | 5         | 16      | Corner Out           |
+| Floor    | 6         | 32      | Wall, Ceiling            |
+| Ceiling    | 7         | 64      | Wall, Ceiling          |
+
+
+
+
+# Assembly Tags
 
 
 
