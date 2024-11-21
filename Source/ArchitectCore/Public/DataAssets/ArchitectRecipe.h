@@ -6,6 +6,7 @@
 #include "Engine/DataAsset.h"
 #include "PCGGraph.h"
 #include "PCGDataAsset.h"
+#include "PCArchitectBase.h"
 #include "ArchitectRecipe.generated.h"
 
 UENUM(BlueprintType)
@@ -195,11 +196,11 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Walls")
     FArchitectAsset Wall;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Walls")
-    FArchitectAsset Door;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Walls")
-    FArchitectAsset Window;
+    //UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Walls")
+    //FArchitectAsset Door;
+    //
+    //UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Walls")
+    //FArchitectAsset Window;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Floors")
     FArchitectAsset Floor;
