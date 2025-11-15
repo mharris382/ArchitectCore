@@ -26,7 +26,8 @@ public class ArchitectCore : ModuleRules
 			new string[]
 			{
 				"Core",
-                "PCG"
+                "PCG",
+                "PCGExtendedToolkit"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
